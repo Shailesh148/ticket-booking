@@ -1,7 +1,5 @@
 package com.ticketbooking.model;
 
-import com.ticketbooking.entity.MovieEntity;
-
 import java.util.Date;
 
 
