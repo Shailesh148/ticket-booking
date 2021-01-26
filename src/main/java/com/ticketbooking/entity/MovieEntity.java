@@ -20,6 +20,14 @@ public class MovieEntity {
     @Column(name="title")
     private String title;
 
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+
     @Column(name="duration")
     private int duration;
 

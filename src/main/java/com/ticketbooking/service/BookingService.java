@@ -27,4 +27,8 @@ public class BookingService {
     public List<MovieEntity> getAllMovies() {
         return movieRepository.findAll();
     }
+
+    public List<ShowEntity> getShowsForMovie(int movie){
+        return showRepository.findByMovieMovieId(movie);
+    }
 }
