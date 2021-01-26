@@ -18,6 +18,7 @@ import java.util.*;
 
 @Controller
 @RequestMapping("/booking")
+@CrossOrigin
 public class BookingController {
 
 
