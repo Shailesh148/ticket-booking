@@ -9,7 +9,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Table(
+        name="movie")
 public class MovieEntity {
 
     @Id

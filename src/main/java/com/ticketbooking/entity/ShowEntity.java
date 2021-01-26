@@ -7,12 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Table(
+        name="show")
 public class ShowEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -20,7 +21,7 @@ public class ShowEntity {
     private int showId;
 
     @Column(name="date")
-    private String date;
+    private Date date;
 
     @Column(name="startTime")
     private String startTime;
@@ -32,7 +33,7 @@ public class ShowEntity {
     @JoinColumn(name = "movieId")
     private MovieEntity movie;
 
-    public ShowEntity(String date, String startTime, String endTime, MovieEntity movie){
+    public ShowEntity(Date date, String startTime, String endTime, MovieEntity movie){
         this.date= date;
         this.startTime= startTime;
         this.endTime = endTime;
@@ -47,11 +48,11 @@ public class ShowEntity {
         this.showId = showId;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

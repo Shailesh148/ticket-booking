@@ -3,6 +3,7 @@ package com.ticketbooking.controller;
 
 import com.ticketbooking.entity.MovieEntity;
 import com.ticketbooking.entity.ShowEntity;
+import com.ticketbooking.model.Booking;
 import com.ticketbooking.model.Movie;
 import com.ticketbooking.service.BookingService;
 import org.apache.coyote.Response;
@@ -10,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -39,5 +38,17 @@ public class BookingController {
     @GetMapping(value="show", produces = "application/json")
     public ResponseEntity getMoviesForShow(@RequestParam int movie){
         return new ResponseEntity<>(bookingService.getShowsForMovie(movie), HttpStatus.OK);
+    }
+
+    @PostMapping(value="book_show", produces= "application/json")
+    public ResponseEntity bookShow(@RequestBody Booking booking){
+        bookingService.bookShow(booking);
+        return new ResponseEntity<>("Success", HttpStatus.OK);
+    }
+
+
+    @GetMapping(produces = "application/json")
+    public ResponseEntity getUserBookings(@RequestParam int userId){
+        return new ResponseEntity<>(bookingService.getUserBookings(userId),HttpStatus.OK );
     }
 }

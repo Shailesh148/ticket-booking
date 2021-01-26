@@ -2,16 +2,17 @@ package com.ticketbooking.model;
 
 import com.ticketbooking.entity.MovieEntity;
 
+import java.util.Date;
 
 
 public class Show {
-    private String date;
+    private Date date;
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

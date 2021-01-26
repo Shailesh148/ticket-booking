@@ -14,14 +14,14 @@ import java.util.stream.Collectors;
 public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private int id;
 
     private String username;
 
     @JsonIgnore
     private String password;
 
-    public UserDetails(Long id, String username, String password) {
+    public UserDetails(int id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -36,7 +36,7 @@ public class UserDetails implements org.springframework.security.core.userdetail
     }
 
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
