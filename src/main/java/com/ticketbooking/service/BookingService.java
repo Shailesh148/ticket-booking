@@ -13,7 +13,6 @@ import java.util.*;
 @Service
 public class BookingService {
 
-
     @Autowired
     ShowRepository showRepository;
 
@@ -26,7 +25,6 @@ public class BookingService {
     }
 
     public List<MovieEntity> getAllMovies() {
-        List<MovieEntity> movies = movieRepository.findAll();
-        return movies;
+        return movieRepository.findAll();
     }
 }

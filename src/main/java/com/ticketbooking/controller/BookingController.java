@@ -5,6 +5,7 @@ import com.ticketbooking.entity.MovieEntity;
 import com.ticketbooking.entity.ShowEntity;
 import com.ticketbooking.model.Movie;
 import com.ticketbooking.service.BookingService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,8 @@ public class BookingController {
 
     @GetMapping(value="all_shows", produces="application/json")
     public ResponseEntity getAllShows(){
-        return new ResponseEntity<>(bookingService.getAllShows(), HttpStatus.OK);
+        List<ShowEntity> allShows = bookingService.getAllShows();
+        return new ResponseEntity<>(allShows, HttpStatus.OK);
     }
 
     @GetMapping(value="all_movies",produces="application/json")
