@@ -1,7 +1,6 @@
 package com.ticketbooking.controller;
 
 
-import com.ticketbooking.entity.ShowEntity;
 import com.ticketbooking.model.Movie;
 import com.ticketbooking.model.Show;
 import com.ticketbooking.service.AdminService;

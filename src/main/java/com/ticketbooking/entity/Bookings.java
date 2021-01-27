@@ -3,12 +3,11 @@ package com.ticketbooking.entity;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Optional;
 
 @Entity
 @Table(
         name="booking")
-public class BookingEntity {
+public class Bookings {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +26,7 @@ public class BookingEntity {
 
     @ManyToOne
     @JoinColumn(name="showId")
-    private ShowEntity show;
+    private Shows show;
 
 
     public Date getTimeStamp() {
@@ -54,11 +53,11 @@ public class BookingEntity {
         this.bookingId = bookingId;
     }
 
-    public ShowEntity getShow() {
+    public Shows getShow() {
         return show;
     }
 
-    public void setShow(ShowEntity show) {
+    public void setShow(Shows show) {
         this.show = show;
     }
 
@@ -70,14 +69,14 @@ public class BookingEntity {
         this.user = user;
     }
 
-    public BookingEntity(Date timeStamp, int noOfSeats, User user, ShowEntity show){
+    public Bookings(Date timeStamp, int noOfSeats, User user, Shows show){
         this.timeStamp = timeStamp;
         this.noOfSeats = noOfSeats;
         this.user = user;
         this.show = show;
     }
 
-    public BookingEntity(){
+    public Bookings(){
 
     }
 }

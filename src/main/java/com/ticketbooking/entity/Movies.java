@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(
         name="movie")
-public class MovieEntity {
+public class Movies {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,13 +59,13 @@ public class MovieEntity {
         this.genre = genre;
     }
 
-    public MovieEntity(String title, int duration, String genre){
+    public Movies(String title, int duration, String genre){
         this.title = title;
         this.duration = duration;
         this.genre = genre;
     }
 
-    public MovieEntity(){
+    public Movies(){
 
     }
 }

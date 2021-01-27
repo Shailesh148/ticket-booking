@@ -7,7 +7,7 @@ import java.util.Date;
 @Entity
 @Table(
         name="payment")
-public class PaymentEntity {
+public class Payments {
 
     @Id
     @Column(name="paymentId")
@@ -22,16 +22,16 @@ public class PaymentEntity {
 
     @OneToOne
     @JoinColumn(name="bookingId")
-    private BookingEntity bookingEntity;
+    private Bookings bookings;
 
 
-    public PaymentEntity(Double amount, Date timeStamp, BookingEntity bookingEntity){
+    public Payments(Double amount, Date timeStamp, Bookings bookings){
         this.amount = amount;
         this.timeStamp = timeStamp;
-        this.bookingEntity = bookingEntity;
+        this.bookings = bookings;
     }
 
-    public PaymentEntity(){
+    public Payments(){
 
     }
 

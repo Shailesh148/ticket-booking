@@ -1,9 +1,7 @@
 package com.ticketbooking.entity;
 
 
-import com.ticketbooking.model.Show;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -14,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(
         name="shows")
-public class ShowEntity {
+public class Shows {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="showId")
@@ -34,9 +32,9 @@ public class ShowEntity {
 
     @ManyToOne
     @JoinColumn(name = "movieId")
-    private MovieEntity movie;
+    private Movies movie;
 
-    public ShowEntity(Date date, String startTime, String endTime, MovieEntity movie,String cinemaHall){
+    public Shows(Date date, String startTime, String endTime, Movies movie, String cinemaHall){
         this.date= date;
         this.startTime= startTime;
         this.endTime = endTime;
@@ -76,7 +74,7 @@ public class ShowEntity {
         this.endTime = endTime;
     }
 
-    public MovieEntity getMovie() {
+    public Movies getMovie() {
         return movie;
     }
 
@@ -88,11 +86,11 @@ public class ShowEntity {
         this.cinemaHall = cinemaHall;
     }
 
-    public void setMovie(MovieEntity movie) {
+    public void setMovie(Movies movie) {
         this.movie = movie;
     }
 
-    public ShowEntity(){
+    public Shows(){
 
     }
 

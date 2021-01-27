@@ -1,13 +1,13 @@
 package com.ticketbooking.repository;
 
-import com.ticketbooking.entity.BookingEntity;
+import com.ticketbooking.entity.Bookings;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.*;
 
 
 @Repository
-public interface BookingRepository  extends JpaRepository<BookingEntity, Integer> {
+public interface BookingRepository  extends JpaRepository<Bookings, Integer> {
 
-    List<BookingEntity> findByUserId(int userId);
+    List<Bookings> findByUserId(int userId);
 }
