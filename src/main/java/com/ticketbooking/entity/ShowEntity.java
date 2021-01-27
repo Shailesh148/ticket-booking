@@ -80,6 +80,14 @@ public class ShowEntity {
         return movie;
     }
 
+    public String getCinemaHall() {
+        return cinemaHall;
+    }
+
+    public void setCinemaHall(String cinemaHall) {
+        this.cinemaHall = cinemaHall;
+    }
+
     public void setMovie(MovieEntity movie) {
         this.movie = movie;
     }
