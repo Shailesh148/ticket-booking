@@ -1,10 +1,7 @@
 package com.ticketbooking.service;
 
 
-import com.ticketbooking.entity.BookingEntity;
-import com.ticketbooking.entity.MovieEntity;
-import com.ticketbooking.entity.PaymentEntity;
-import com.ticketbooking.entity.ShowEntity;
+import com.ticketbooking.entity.*;
 import com.ticketbooking.model.Booking;
 import com.ticketbooking.model.Payment;
 import com.ticketbooking.repository.*;
@@ -48,7 +45,7 @@ public class BookingService {
 
     public void bookShow(Booking booking){
         Payment payment = booking.getPayment();
-        BookingEntity bookingEntity = new BookingEntity(new Date(), booking.getNoOfSeats(),userRepository.findByUsername(booking.getUserId()).get(), showRepository.findById(booking.getShowId()).get());
+        BookingEntity bookingEntity = new BookingEntity(new Date(), booking.getNoOfSeats(),userRepository.findByUsername(booking.getUserName()).get(), showRepository.findById(booking.getShowId()).get());
         PaymentEntity paymentEntity = new PaymentEntity(payment.getAmount(), new Date(),bookingEntity);
         transact(bookingEntity, paymentEntity);
     }
@@ -59,8 +56,9 @@ public class BookingService {
         paymentRepository.save(paymentEntity);
     }
 
-    public List<BookingEntity> getUserBookings(int userId){
-        List<BookingEntity> bookings = bookingRepository.findByUserId(userId);
+    public List<BookingEntity> getUserBookings(String userName){
+        User user = userRepository.findByUsername(userName).get();
+        List<BookingEntity> bookings = bookingRepository.findByUserId(user.getId());
         for (BookingEntity eachBooking : bookings) {
             eachBooking.setUser(null);
         }

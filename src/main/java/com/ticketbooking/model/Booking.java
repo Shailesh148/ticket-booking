@@ -22,11 +22,11 @@ public class Booking {
         this.showId = showId;
     }
 
-    public String getUserId() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserId(String userId) {
+    public void setUserName(String userId) {
         this.userName = userName;
     }
 

@@ -49,7 +49,7 @@ public class BookingController {
 
 
     @GetMapping(produces = "application/json")
-    public ResponseEntity getUserBookings(@RequestParam int userId){
-        return new ResponseEntity<>(bookingService.getUserBookings(userId),HttpStatus.OK );
+    public ResponseEntity getUserBookings(@RequestParam String userName){
+        return new ResponseEntity<>(bookingService.getUserBookings(userName),HttpStatus.OK );
     }
 }
