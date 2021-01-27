@@ -9,7 +9,7 @@ import lombok.Setter;
 public class Booking {
 
     private int showId;
-    private int userId;
+    private String userName;
     private int noOfSeats;
     private Payment payment;
 
@@ -22,12 +22,12 @@ public class Booking {
         this.showId = showId;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUserId() {
+        return userName;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserId(String userId) {
+        this.userName = userName;
     }
 
     public int getNoOfSeats() {
