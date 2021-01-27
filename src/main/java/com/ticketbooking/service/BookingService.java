@@ -44,7 +44,9 @@ public class BookingService {
     }
 
     public void bookShow(Booking booking){
+        List<User> allUsers = userRepository.findAll();
         Payment payment = booking.getPayment();
+        User use = userRepository.findByUsername(booking.getUserName()).get();
         BookingEntity bookingEntity = new BookingEntity(new Date(), booking.getNoOfSeats(),userRepository.findByUsername(booking.getUserName()).get(), showRepository.findById(booking.getShowId()).get());
         PaymentEntity paymentEntity = new PaymentEntity(payment.getAmount(), new Date(),bookingEntity);
         transact(bookingEntity, paymentEntity);

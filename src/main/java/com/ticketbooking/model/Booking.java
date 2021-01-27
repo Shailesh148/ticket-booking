@@ -26,7 +26,7 @@ public class Booking {
         return userName;
     }
 
-    public void setUserName(String userId) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
