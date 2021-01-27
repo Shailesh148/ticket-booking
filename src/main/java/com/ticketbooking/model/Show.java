@@ -43,4 +43,14 @@ public class Show {
     private String endTime;
 
     private String movieName;
+
+    public String getCinemaHall() {
+        return cinemaHall;
+    }
+
+    public void setCinemaHall(String cinemaHall) {
+        this.cinemaHall = cinemaHall;
+    }
+
+    private String cinemaHall;
 }

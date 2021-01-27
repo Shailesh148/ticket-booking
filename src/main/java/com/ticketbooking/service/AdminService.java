@@ -27,6 +27,6 @@ public class AdminService {
 
     public void addShow(Show show){
         MovieEntity movieEntity = movieRepository.findByTitle(show.getMovieName());
-        showRepository.save(new ShowEntity(show.getDate(), show.getStartTime(), show.getEndTime(), movieEntity));
+        showRepository.save(new ShowEntity(show.getDate(), show.getStartTime(), show.getEndTime(), movieEntity, show.getCinemaHall()));
     }
 }

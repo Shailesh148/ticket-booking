@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(
-        name="show")
+        name="shows")
 public class ShowEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -29,15 +29,19 @@ public class ShowEntity {
     @Column(name="endTime")
     private String endTime;
 
+    @Column(name="cinemaHall")
+    private String cinemaHall;
+
     @ManyToOne
     @JoinColumn(name = "movieId")
     private MovieEntity movie;
 
-    public ShowEntity(Date date, String startTime, String endTime, MovieEntity movie){
+    public ShowEntity(Date date, String startTime, String endTime, MovieEntity movie,String cinemaHall){
         this.date= date;
         this.startTime= startTime;
         this.endTime = endTime;
         this.movie = movie;
+        this.cinemaHall = cinemaHall;
     }
 
     public int getShowId() {
