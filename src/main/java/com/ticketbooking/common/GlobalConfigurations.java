@@ -1,4 +1,4 @@
-package com.ticketbooking;
+package com.ticketbooking.common;
 
 import lombok.val;
 import org.modelmapper.internal.util.Lists;
