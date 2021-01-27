@@ -18,9 +18,6 @@ public class Booking {
         return showId;
     }
 
-    public void setShowId(int showId) {
-        this.showId = showId;
-    }
 
     public String getUserName() {
         return userName;
@@ -29,6 +26,12 @@ public class Booking {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public void setShowId(int showId) {
+        this.showId = showId;
+    }
+
+
 
     public int getNoOfSeats() {
         return noOfSeats;
