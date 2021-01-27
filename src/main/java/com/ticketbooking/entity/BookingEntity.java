@@ -46,6 +46,22 @@ public class BookingEntity {
         this.noOfSeats = noOfSeats;
     }
 
+    public int getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    public ShowEntity getShow() {
+        return show;
+    }
+
+    public void setShow(ShowEntity show) {
+        this.show = show;
+    }
+
     public User getUser() {
         return user;
     }
